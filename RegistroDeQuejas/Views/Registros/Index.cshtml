@@ -1,0 +1,87 @@
+﻿@*Created by agqb*@
+
+
+@model IEnumerable<RegistroDeQuejas.Models.Registro>
+
+@{
+    ViewData["Title"] = "Registros";
+
+}
+
+<div class="row text-center">
+
+    <h2>List of Complaints</h2>
+</div>
+<hr />
+
+    <p justify-content-center>
+        <a asp-action="Create" class="btn btn-outline-dark btn-lg">Add a new complaint</a>
+    </p>
+
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroDni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroCopy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroDependency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroComplaints)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroRelation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroEvidence)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr class="align-self-center">
+            <td >@Html.DisplayFor(modelItem => item.RegistroDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroName)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroDni)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroCopy)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroNum)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroDependency)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroPosition)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroEmail)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroComplaints)</td>
+            <td>@Html.DisplayFor(modelItem => item.RegistroRelation)</td>
+            <td> @Html.DisplayFor(modelItem => item.RegistroEvidence)</td>
+        
+
+            <td>
+                @*Erase/Edit/Detail*@
+                <a asp-action="Edit" class="btn btn-outline-info mt-2" asp-route-id="@item.RegistroId">Edit</a>
+                <a asp-action="Details" class="btn btn-outline-secondary mt-2" asp-route-id="@item.RegistroId">Details</a>
+                <a asp-action="Delete" class="btn btn-outline-warning mt-2" asp-route-id="@item.RegistroId">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

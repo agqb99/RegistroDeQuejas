@@ -1,0 +1,108 @@
+﻿@model RegistroDeQuejas.Models.Registro
+
+@{ ViewData["Title"] = "Create a new Register"; }
+
+<h2 class="d-flex justify-content-center">Create</h2>
+
+<hr />
+
+<div class="row d-flex justify-content-center">
+ 
+    <form asp-action="create" class="shadow-sm p-3 mb-5 bg-white rounded">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input class="form-control text-center" id="disabledInput" type="text" placeholder="Formato de acoso laboral" disabled>
+        <input class="form-control text-center mb-3" id="disabledInput" type="text" placeholder="FAMGAR SAS" disabled>
+
+        <div class="form-group">
+            <label asp-for="RegistroDate" class="control-label"></label>
+            <input asp-for="RegistroDate" class="form-control" />
+            <span asp-validation-for="RegistroDate" class="text-danger"></span>
+        </div>
+        <input class="form-control text-center " id="disabledInput" type="text" placeholder="" disabled>
+
+        <p class=" text-center mb-0">FORMATO PARA INTERPONER QUEJAS POR ACOSO LABORAL O PRESENTAR SUGERENCIAS ANTE EL COMITE DE COVIVENCIA LABORAL DE LA EMPRESA COBALSA LTDA.</p>
+        <input class="form-control text-center mt-0" id="disabledInput" type="text" placeholder="" disabled>
+
+        <div class="form-group">
+            <label asp-for="RegistroName" class="control-label"></label>
+            <input asp-for="RegistroName" class="form-control" />
+            <span asp-validation-for="RegistroName" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label asp-for="RegistroDni" class="control-label"></label>
+                    <input asp-for="RegistroDni" class="form-control" />
+                    <span asp-validation-for="RegistroDni" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="form-group">
+                    <label asp-for="RegistroCopy" class="control-label"></label>
+                    <input asp-for="RegistroCopy" class="form-control" />
+                    <span asp-validation-for="RegistroCopy" class="text-danger"></span>
+
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label asp-for="RegistroNum" class="control-label"></label>
+                    <input asp-for="RegistroNum" class="form-control" />
+                    <span asp-validation-for="RegistroNum" class="text-danger"></span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RegistroDependency" class="control-label"></label>
+            <input asp-for="RegistroDependency" class="form-control" />
+            <span asp-validation-for="RegistroDependency" class="text-danger"></span>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="RegistroPosition" class="control-label"></label>
+            <input asp-for="RegistroPosition" class="form-control" />
+            <span asp-validation-for="RegistroPosition" class="text-danger"></span>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="RegistroEmail" class="control-label"></label>
+            <input asp-for="RegistroEmail" class="form-control" />
+            <span asp-validation-for="RegistroEmail" class="text-danger"></span>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="RegistroComplaints" class="control-label"></label>
+            <input asp-for="RegistroComplaints" class="form-control" />
+            <span asp-validation-for="RegistroComplaints" class="text-danger"></span>
+
+        </div>
+        <div class="form-group ">
+            <label asp-for="RegistroRelation" class="control-label"></label>
+            <input asp-for="RegistroRelation" class="form-control" />
+            <span asp-validation-for="RegistroRelation" class="text-danger"></span>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="RegistroEvidence" class="control-label"></label>
+            <input asp-for="RegistroEvidence" class="form-control" />
+            <span asp-validation-for="RegistroEvidence" class="text-danger"></span>
+
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input type="submit" value="Save" class="btn btn-outline-info mr-2" />
+            <a asp-action="Index" class=" btn btn-outline-dark ml-2">Go Back</a>
+
+        </div>
+    </form>
+    </div>
+
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
